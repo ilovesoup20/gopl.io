@@ -41,4 +41,20 @@ func main() {
 	fmt.Println(aa == bb, aa == cc, bb == cc) // "true false false"
 	// dd := [3]int{1, 2}
 	// fmt.Println(aa == dd)	// compile error: cannot compare [2]int == [3]int
+
+	dd := []int{1, 2, 3, 4, 5}
+	fmt.Printf("%p\n", dd)
+	fmt.Printf("%p\n", &dd)
+	echo(dd)
+}
+
+func echo(arr []int) {
+	fmt.Printf("%p\n", arr)
+	fmt.Printf("%p\n", &arr)
+}
+
+func zero(ptr *[32]byte) {
+	for i := range ptr {
+		ptr[i] = 0
+	}
 }
