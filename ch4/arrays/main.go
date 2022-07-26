@@ -43,14 +43,20 @@ func main() {
 	// fmt.Println(aa == dd)	// compile error: cannot compare [2]int == [3]int
 
 	dd := []int{1, 2, 3, 4, 5}
-	fmt.Printf("%p\n", dd)
-	fmt.Printf("%p\n", &dd)
+	fmt.Printf("%p\t%d\n", &dd, dd)
 	echo(dd)
+	echo(dd)
+
+	echo2(&dd)
+	echo2(&dd)
 }
 
 func echo(arr []int) {
-	fmt.Printf("%p\n", arr)
-	fmt.Printf("%p\n", &arr)
+	fmt.Printf("%p\t%p\n", &arr, arr)
+}
+
+func echo2(arr *[]int) {
+	fmt.Printf("%p\t%p\t%p\n", &arr, arr, *arr)
 }
 
 func zero(ptr *[32]byte) {
